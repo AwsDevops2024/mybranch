@@ -14,7 +14,7 @@ pipeline {
              steps{
              git branch :'main'
              credentialsId : 'github'
-             url : 'https://github.com/AwsDevops224/mybranch'
+             url : 'https://github.com/AwsDevops224/mybranch.git'
           }
       }
      stage("Build Application"){
