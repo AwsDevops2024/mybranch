@@ -1,7 +1,7 @@
 pipeline {
       agent { label 'jenkins-agent' }
       tools {
-           jdk 'Java17'
+           jdk 'JDK17'
            maven 'Maven3'
         }
       stages {
@@ -14,7 +14,7 @@ pipeline {
              steps{
              git branch :'main'
              credentialsId : 'github'
-             url : 'https://github.com/AwsDevops2024/mybranch.git'
+             url : 'https://@github.com/AwsDevops2024/mybranch.git'
           }
       }
      stage("Build Application"){
