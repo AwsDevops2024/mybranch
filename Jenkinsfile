@@ -13,7 +13,7 @@ pipeline {
           stage("Checkout from SCM"){
              steps{
                 script{
-                    git branch :'main'
+                    git branch :'*/main'
                     credentialsId : '@github'
                     url : 'https://@github.com/AwsDevops2024/mybranch.git'
                 }
