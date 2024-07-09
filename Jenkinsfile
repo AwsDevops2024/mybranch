@@ -10,19 +10,21 @@ pipeline {
               cleanWs()
               }
        }
-      stage("Checkout from SCM"){
+          stage("Checkout from SCM"){
              steps{
-             git branch :'main'
-             credentialsId : 'github'
-             url : 'https://@github.com/AwsDevops2024/mybranch.git'
+                script{
+                    git branch :'main'
+                    credentialsId : '@github'
+                    url : 'https://@github.com/AwsDevops2024/mybranch.git'
+                }
           }
       }
-     stage("Build Application"){
+         stage("Build Application"){
             steps{
               sh "mvn clean package"
            }
       }
-    stage("Test Application"){
+         stage("Test Application"){
            steps{
               sh "mvn test"
           }
